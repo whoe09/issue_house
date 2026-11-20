@@ -1,0 +1,36 @@
+# 1. IDE & OS (IntelliJ .iea 폴더 제외)
+.idea/
+.vscode/
+.DS_Store
+
+# 2. Go 빌드 산출물 및 바이너리
+bin/
+issue_house
+ih-cli
+*.exe
+*.out
+coverage.txt
+vendor/
+.note/
+
+# 3. SQLite DB 및 WAL 모두 부속 파일
+*.db
+*.sqlite
+*.sqlite3
+*-shm
+*-wal
+*-journal
+data/
+
+# 4. 환경변수 및 시크릿
+.env
+.env.*
+!.env.example
+
+# 5. DevSecOps 스캔 결과 및 Terraform 상태 파일
+*.sarif
+*sbom*.json
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars

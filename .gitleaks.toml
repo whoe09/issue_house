@@ -1,0 +1,19 @@
+title = "issue_house gitleaks config"
+
+[extend]
+# gitleaks 내장 기본 룰셋(AWS, GitHub, Privat Key 등) 그대로 사용
+useDefault = true
+
+[[rules]]
+id = "issue-house-api-token"
+description = "issue_house Machine API Token"
+# 머신용 토큰 형식 미리 정의(ex. ih_tok_ 뒤 32자 이상 영숫자 조합)
+regex = '''ih_tok_[a-zA-Z0-9]{32,}'''
+tags = ["key", "issue_house"]
+
+[allowlist]
+description = "Global allowlist"
+paths = [
+    '''\.gitleaks\.toml$''',
+    '''docs/''',
+]
